@@ -103,7 +103,7 @@ A PostgreSQL database with the following schema:
 
 ## 📸 Screenshot
 
-![GroceryManagement System Demo](images/GMS.png)
+![GroceryManagement System Demo](https://github.com/GhemadShreya/Grossery-Managment-System/commit/77e14b4389fd9e988f7a01882d5963a1c12be311)
 
 ---
 ## 👤 Contact
