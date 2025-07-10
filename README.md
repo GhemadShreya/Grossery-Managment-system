@@ -1,87 +1,119 @@
-# Grossery-Managment-system
+# Grocery Management System
+
 ![Java](https://img.shields.io/badge/Java-17-blue)
 ![Maven](https://img.shields.io/badge/Maven-3.8.6-red)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-green)
 ![JDBC](https://img.shields.io/badge/JDBC-4.2-orange)
 
-The Grocery Management System is a console-based application built using Core Java, JDBC, and PostgreSQL. It allows users to perform CRUD (Create, Read, Update, Delete) operations on product record stored in a PostgreSQL database. The application is menu-driven, providing a simple and intuitive interface for managing employee data.
-
-## Features
-
--**Add User**: Add a user in the database.
--**Add Product**: Add a new product record to the database.
--**View All Product**: Fetch and display all products records.
--**Delete Product**: Delete an product record by ID.
--**Menu-Driven Interface**: Easy-to-use console-based menu for seamless navigation.
--Use Collectios For retrive all product list.
----
-## Technologies Used
-
-- **Core Java**: For implementing the application logic and OOPs concepts.
-- **JDBC (Java Database Connectivity)**: For connecting to and interacting with the PostgreSQL database.
-- **PostgreSQL**: For storing and managing employee data.
-- **Maven**: For project dependency management and building the project.
+The **Grocery Management System** is a console-based application built using Core Java, JDBC, and PostgreSQL. It allows users to perform CRUD (Create, Read, Update, Delete) operations on grocery data stored in a PostgreSQL database. The application features a menu-driven interface, offering a simple and intuitive experience for managing users, categories, products, and billing.
 
 ---
 
-## Dependencies
+## ✅ Features
 
-The project uses the following dependencies:
-
-- **PostgreSQL JDBC Driver**: For connecting to the PostgreSQL database.
-  ```xml
-  <dependency>
-      <groupId>org.postgresql</groupId>
-      <artifactId>postgresql</artifactId>
-      <version>42.6.0</version>
-  </dependency>
-  ```
-
----
-
-## Prerequisites
-
-Before running the project, ensure you have the following installed:
-
-1. **Java Development Kit (JDK) 17 or higher**.
-2. **Apache Maven 3.8.6 or higher**.
-3. **PostgreSQL 15 or higher**.
-4. create PostgreSQL database with the following table:
-   ```sql
-create table users (userId serial primary key,userName varchar(100),
-email varchar(100),passwd varchar(100),role varchar(100));
-
-create table categories(categoryId serial primary key,categoryName varchar(100));
-
-create table products (productId serial primary key,productName varchar(100),
-price float,quantity int,categoryId  int references categories(categoryId));
-
-create table cartItems(cartId serial primary key,userId int references users(userId),
-productId int references products(productId),quantity int);
-
-create table orders (orderId serial primary key ,userId int references users(userId),
-orderDate timestamp,totalPrice numeric(10,2));
-
-create table orderItems(orderItemsId serial primary key, orderId int references orders(orderId),
-productId int references products(productId),quantity int);
-
-
-   ```
+- **Add User**: Register a new user in the system.
+- **Add Category**: Add a new product category.
+- **Add Product**: Add a new product under a specific category.
+- **View All Products**: Display all products with their details.
+- **View Categories**: Display all categories.
+- **View Users**: Display registered users.
+- **Buy Products & Generate Bill**: Select products, specify quantity, and calculate the total bill.
+- **Menu-Driven Interface**: Easy-to-use console navigation.
+- **Uses Collections**: To handle and display product lists.
 
 ---
 
+## 🛠️ Technologies Used
 
-## Contact
-
-For any questions or feedback, feel free to reach out:
-
-- **Your Name** : Shreya Ghemad
-- **Email**: shreyaghemad16@gmail.com  
-- **GitHub**: [Amardole](https://github.com/Amardole)
+- **Core Java**: For implementing application logic and OOP concepts.
+- **JDBC (Java Database Connectivity)**: For database operations.
+- **PostgreSQL**: For storing user, product, and billing data.
+- **Maven**: For dependency and project build management.
 
 ---
 
-Enjoy using the **Employee Management System**! 🚀
+## 📦 Dependencies
+
+The project uses the following Maven dependency:
+
+```xml
+<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>42.6.0</version>
+</dependency>
+```
+---
+## 🔧 Prerequisites
+Before running the project, make sure you have:
+
+Java Development Kit (JDK) 17 or higher
+
+Apache Maven 3.8.6 or higher
+
+PostgreSQL 15 or higher
+
+A PostgreSQL database with the following schema:
+
+``` sql
+-CREATE TABLE users (
+    userId SERIAL PRIMARY KEY,
+    userName VARCHAR(100),
+    email VARCHAR(100),
+    passwd VARCHAR(100),
+    role VARCHAR(100)
+);
+
+-CREATE TABLE categories (
+    categoryId SERIAL PRIMARY KEY,
+    categoryName VARCHAR(100)
+);
+
+-CREATE TABLE products (
+    productId SERIAL PRIMARY KEY,
+    productName VARCHAR(100),
+    price FLOAT,
+    quantity INT,
+    categoryId INT REFERENCES categories(categoryId)
+);
+
+-CREATE TABLE cartItems (
+    cartId SERIAL PRIMARY KEY,
+    userId INT REFERENCES users(userId),
+    productId INT REFERENCES products(productId),
+    quantity INT
+);
+
+-CREATE TABLE orders (
+    orderId SERIAL PRIMARY KEY,
+    userId INT REFERENCES users(userId),
+    orderDate TIMESTAMP,
+    totalPrice NUMERIC(10,2)
+);
+
+-CREATE TABLE orderItems (
+    orderItemsId SERIAL PRIMARY KEY,
+    orderId INT REFERENCES orders(orderId),
+    productId INT REFERENCES products(productId),
+    quantity INT
+);
+```
 
 ---
 
+## 📸 Screenshot
+
+![GroceryManagement System Demo](images/GMS.png)
+
+---
+## 👤 Contact
+For any questions or feedback, feel free to connect:-
+
+-**Name**: Shreya Ghemad
+
+-**Email**: shreyaghemad16@gmail.com
+
+-**GitHub**: https://github.com/GhemadShreya
+
+🎉 Enjoy using the Grocery Management System!
+Built with ❤️ in Core Java.
