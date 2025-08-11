@@ -116,4 +116,4 @@ For any questions or feedback, feel free to connect:-
 -**GitHub**: https://github.com/GhemadShreya
 
 🎉 Enjoy using the Grocery Management System!
-Built with ❤️ in Core Java.
+Built with ❤️ in  Java.
